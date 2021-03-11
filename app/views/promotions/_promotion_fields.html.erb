@@ -1,0 +1,20 @@
+<%= promotion.name %>
+
+    <dl>
+      <dt>Nome</dt>
+      <dd><%= promotion.name %>
+      <dt>Descrição</dt>
+      <dd><%= promotion.description %></dd>   
+      <dt>Desconto em porcentagem</dt>
+      <dd><%= number_to_percentage promotion.discount_rate, precision: 2, separator:',' %></dd> 
+      <dt>Cupom</dt>
+      <dd><%= promotion.code %></dd>
+      <dt>Data de término:</dt>
+      <dd><%= promotion.expiration_date.strftime('%d/%m/%Y') %></dd>
+      <dt>Número de cupons:</dt>
+      <dd><%= promotion.coupon_quantity %></dd>
+    </dl>
+
+    <% promotion.product_categories.each do |product_category| %>
+     <p><%= product_category.name %></p>
+    <% end %>

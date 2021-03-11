@@ -1,0 +1,9 @@
+---
+pt-BR:
+ activerecord:
+  errors:
+    models:
+      user:
+        attributes:
+          email:
+            domain_invalid: 'domínio inválido'

@@ -1,0 +1,18 @@
+  <% product_category.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+  <% end %>
+  <%= form_with model: product_category, local: true do |f| %>
+  <div class="form-product-categories" >
+    <div class="form-inline">
+      <%= f.label :name %>
+      <%= f.text_field :name,class: "form-control w-20 mb-2 mr-sm-2 mb-sm-0" %>
+      <%= f.label :code %>
+      <%= f.text_field :code, class: "form-control w-30 mb-2 mr-sm-2 mb-sm-0" %>
+        <%= f.submit 'Salvar', class: "btn btn-primary" %>
+
+    </div>
+  </div >
+  <br>
+  <% end %>
+
+  

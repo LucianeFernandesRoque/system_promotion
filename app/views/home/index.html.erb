@@ -1,0 +1,15 @@
+<h1>Sistema de Promoções</h1>
+<p>Boas vindas ao sistema de gestão de promoções</p>
+
+<div class="container">
+  <nav>
+    <% if user_signed_in? %>
+    <%= form_tag coupons_path, :method => 'get' do %>
+    <%= text_field_tag :query, params[:query], class: "ls-field" %>
+    <%= submit_tag 'Buscar cupom', :name => nil, class: "ls-btn" %>
+    <% end %>
+      <%= link_to 'Categorias de produto', product_categories_path %></p>  
+      <%= link_to 'Promoções', promotions_path %>
+<% end %>
+ </nav>
+ </div>

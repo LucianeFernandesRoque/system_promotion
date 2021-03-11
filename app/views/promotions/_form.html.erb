@@ -1,0 +1,22 @@
+  <% promotion.errors.full_messages.each do |msg| %>
+    <%= msg %>
+  <% end %>
+
+<%= form_with model: promotion, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control w-50 mb-2 mr-sm-2 mb-sm-0" %><br>
+  <%= f.label :description %>
+  <%= f.text_field :description, class: "form-control w-50 mb-2 mr-sm-2 mb-sm-0" %><br>
+  <%= f.label :code %>
+  <%= f.text_field :code, class: "form-control w-50 mb-2 mr-sm-2 mb-sm-0" %><br>
+  <%= f.label :discount_rate %>
+  <%= f.number_field :discount_rate, class: "form-control w-50 mb-2 mr-sm-2 mb-sm-0" %><br>
+  <%= f.label :coupon_quantity %>
+  <%= f.number_field :coupon_quantity, min: 0,class: "form-control w-50 mb-2 mr-sm-2 mb-sm-0" %><br>
+  <%= f.label :expiration_date %>
+  <%= f.date_field :expiration_date %><br>
+  <%= f.label :product_category_ids %>
+  <%= f.collection_check_boxes :product_category_ids, ProductCategory.all, :id, :name %>
+  <%= f.submit 'Salvar' %>
+<% end %>
+

@@ -1,0 +1,16 @@
+  <%= link_to 'Voltar', promotions_path %>
+  <%= link_to 'Editar', edit_promotion_path(@promotion) %>
+  <%= link_to 'Apagar', promotion_path(@promotion), method: :delete %> 
+
+
+
+      <%= render partial: 'promotion_fields', locals: { promotion: @promotion } %>
+        
+      <% if @promotion.coupon_quantity > @promotion.coupons.count %>
+      <%= link_to 'Emitir cupons', generate_coupons_promotion_path(@promotion), method: :post %>
+   <% end %>
+    <h1>Cupons</h1>
+    <%= render @promotion.coupons %>
+
+  
+

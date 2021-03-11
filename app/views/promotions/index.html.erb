@@ -1,0 +1,30 @@
+<div class="container">
+<table>
+<table class="table table-bordered">
+
+  <tbody>
+      <tr>
+      <th>Nome:</th>
+      <th>Descrição:</th>
+      <th>Desconto:</th>
+    </tr>
+    <% @promotions.each do |promotion| %>
+      <tr>
+        <td><%= link_to promotion.name, promotion %></td> 
+        <td><%= promotion.description %></td>
+        <td><%= number_to_percentage  promotion.discount_rate, precision: 2 %></td>
+      </tr>
+<% end %>
+  </tbody>
+</table>
+  <thead>
+
+  </thead>
+</table>
+
+<% if @promotions.empty? %>
+  <div class="alert alert-info mt-3" role="alert">Nenhuma promoção cadastrada</div>
+<% end %>
+<%= link_to 'Registrar uma promoção', new_promotion_path %>
+<%= link_to 'Voltar', root_path %> 
+</div>

@@ -1,0 +1,8 @@
+<% @coupons.each do |coupon| %>
+    <%= render partial: 'coupon', locals: { coupon: coupon } %>
+    <%= render partial: 'promotions/promotion_fields', locals: { promotion: coupon.promotion } %>
+<% end %>
+    <% if @coupons.empty? %>
+    <p>Nenhum cupom encontrado</p>
+<% end %>
+
